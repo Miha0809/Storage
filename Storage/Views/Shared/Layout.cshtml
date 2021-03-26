@@ -32,19 +32,9 @@
                     <li class="nav-item">
                         <span class="nav-link">@Html.ActionLink("Register", "Register", "Account")</span>
                     </li>
-                    
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li class="nav-item">
-                            <span class="nav-link">@Html.ActionLink("logout", "Logout", "Account")</span>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="nav-item">
-                            <span class="nav-link">@Html.ActionLink("Login", "Login", "Account")</span>
-                        </li>
-                    }
+                    <li class="nav-item">
+                        <span class="nav-link">@Html.ActionLink("Login", "Login", "Account")</span>
+                    </li>
                 </ul>
                 
                 <form class="form-inline my-2 my-lg-0">

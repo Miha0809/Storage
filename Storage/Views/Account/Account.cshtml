@@ -1,5 +1,4 @@
-﻿@model dynamic
-
+﻿@model IEnumerable<Storage.Models.User> 
 @{
     ViewBag.Title = "title";
     Layout = "Layout";
@@ -8,4 +7,28 @@
     <span class="nav-link">@Html.ActionLink("Logout", "Logout", "Account")</span>
 </li>
 
-<h2>Account</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(user => user.FirstName)</th>
+            <th>@Html.DisplayNameFor(user => user.LastName)</th>
+            <th>@Html.DisplayNameFor(user => user.Age)</th>
+            <th>@Html.DisplayNameFor(user => user.Phone)</th>
+            <th>@Html.DisplayNameFor(user => user.Email)</th>
+            <th>@Html.DisplayNameFor(user => user.Password)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(user => item.FirstName)</td>
+            <td>@Html.DisplayFor(user => item.LastName)</td>
+            <td>@Html.DisplayFor(user => item.Age)</td>
+            <td>@Html.DisplayFor(user => item.Phone)</td>
+            <td>@Html.DisplayFor(user => item.Email)</td>
+            <td>@Html.DisplayFor(user => item.Password)</td>
+        </tr>
+        }
+    </tbody>
+</table>

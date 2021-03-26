@@ -14,7 +14,7 @@
 <div>
     <form asp-action="Register" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        @*<input type="hidden" asp-for="Id"/>*@
+        <input type="hidden" asp-for="Id"/>
         <div class="form-group">
             <label asp-for="Email" class="control-label">@Html.DisplayNameFor(x => x.Email)</label>
             <input asp-for="Email" name="Email" class="form-control" />

@@ -98,7 +98,7 @@ namespace Storage.Controllers
        [HttpGet]
        public IActionResult Account()
        {
-           return View();
+           return View(_storageContext.Users.ToList());
        }
     }
 }
