@@ -1,0 +1,60 @@
+﻿@model Storage.Models.RegisterModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div>
+      <form asp-action="Register" method="post">
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <input type="hidden" asp-for="Id" />
+          <div class="form-group">
+              <label asp-for="FirstName" class="control-label">@Html.DisplayNameFor(x => x.FirstName)</label>
+              <input asp-for="FirstName" name="FirstName" class="form-control" />
+              <span asp-validation-for="FirstName" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="LastName" class="control-label">@Html.DisplayNameFor(x => x.LastName)</label>
+              <input asp-for="LastName" name="LastName" class="form-control" />
+              <span asp-validation-for="LastName" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="Phone" class="control-label">@Html.DisplayNameFor(x => x.Phone)</label>
+              <input asp-for="Phone" name="Phone" class="form-control" />
+              <span asp-validation-for="Phone" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="Email" class="control-label">@Html.DisplayNameFor(x => x.Email)</label>
+              <input asp-for="Email" name="Email" class="form-control" />
+              <span asp-validation-for="Email" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="Address" class="control-label">@Html.DisplayNameFor(x => x.Address)</label>
+              <input asp-for="Address" name="Address" class="form-control" />
+              <span asp-validation-for="Address" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="Password" class="control-label">@Html.DisplayNameFor(x => x.Password)</label>
+              <input asp-for="Password" name="Password" class="form-control" />
+              <span asp-validation-for="Password" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="ConfirmPassword" class="control-label">@Html.DisplayNameFor(x => x.ConfirmPassword)</label>
+              <input asp-for="ConfirmPassword" name="ConfirmPassword" class="form-control" />
+              <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <input type="submit" value="Save" class="btn btn-default" />
+          </div>
+      </form>
+    </div>
+</body>
+</html>

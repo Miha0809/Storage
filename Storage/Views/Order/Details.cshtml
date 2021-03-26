@@ -1,0 +1,32 @@
+﻿@model Storage.Models.Order
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div id="wrapper">
+    <header id="header">
+        <h1 class="text-center">Details</h1>
+    </header>
+
+    <div>
+        <h4>Orders</h4>
+
+        <table class="table">
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Address)</td>
+                <td>@Html.DisplayNameFor(model => model.Phone)</td>
+                <td>@Html.DisplayNameFor(model => model.OrderDateTime)</td>
+                <td>@Html.DisplayNameFor(model => model.Products.Name)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Address)</td>
+                <td>@Html.DisplayFor(model => model.Phone)</td>
+                <td>@Html.DisplayFor(model => model.OrderDateTime)</td>
+                <td>@Html.DisplayFor(model => model.Products.Name)</td>
+            </tr>
+        </table>
+
+        <button class="alert-warning"><a href="~/Order/OrderEdit/@Model.Id">Edit</a></button>
+    </div>
+</div>

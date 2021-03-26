@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Storage.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+    Layout = "Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    
+    <title>Storage</title>
+
+</head>
+<body>
+<div id="wrapper">
+    <header id="header">
+        <h1 class="text-center">Product</h1>
+    </header>
+    
+    <main id="main">
+        <div id="data">
+            <table class="table">
+                
+                <tr class="border">
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Buy</td>
+                </tr>
+
+                @foreach (var product in Model)
+                {
+                    <tr class="border text-center">
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price.ToString("C")</td>
+                        <td><button class="button-buy"><a href="~/Home/Buy/@product.Id">Buy</a></button></td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </main>
+    
+    <footer id="footer">
+        <a href="Home/User">Users</a>
+    </footer>
+</div>
+</body>
+</html>

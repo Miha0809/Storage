@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Layout</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+<div id="wrapper">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Logo</a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <span class="nav-link">@Html.ActionLink("Home", "_ViewStart", "MainPage")</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">@Html.ActionLink("Products", "Products", "Home")</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">@Html.ActionLink("Orders", "Orders", "Home")</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">@Html.ActionLink("Register", "Register", "Account")</span>
+                    </li>
+                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link">@Html.ActionLink("logout", "Logout", "Account")</span>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link">@Html.ActionLink("Login", "Login", "Account")</span>
+                        </li>
+                    }
+                </ul>
+                
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; @DateTime.Now.ToShortDateString()</p>
+    </footer>
+
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

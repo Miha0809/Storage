@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "Layout";
+    ViewData["Title"] = "Buy";
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>"Storage"</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Order</h1>
+   <form method="post">
+       <input type="hidden" value="@ViewBag.ProductId" name="Products.Id"/>
+       <table>
+           <tr>
+               <td>Name:</td>
+               <td><input type="text" name="User" /></td>
+           </tr>
+           <tr>
+               <td>Adress:</td>
+               <td><input type="text" name="Address" /></td>
+           </tr>
+           <tr>
+               <td>Phone:</td>
+               <td><input type="text" name="Phone" /></td>
+           </tr>
+          <tr><td><input type="submit" value="Send"></td></tr>
+       </table>
+   </form>
+</body>
+</html>
