@@ -33,8 +33,24 @@
                         <span class="nav-link">@Html.ActionLink("Register", "Register", "Account")</span>
                     </li>
                     <li class="nav-item">
-                        <span class="nav-link">@Html.ActionLink("Login", "Login", "Account")</span>
+                        <span class="nav-link">@Html.ActionLink("AllUsers", "AllUsers", "Admin")</span>
                     </li>
+                    <li class="nav-item">
+                        <span class="nav-link"><a href="~/Profile/ProfileUser">To ProfileUser</a></span>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @User.Identity.Name
+                        <li class="nav-item">
+                            <span class="nav-link">@Html.ActionLink("Logout", "Logout", "Account")</span>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link">@Html.ActionLink("Login", "Login", "Account")</span>
+                        </li>
+                    }
                 </ul>
                 
                 <form class="form-inline my-2 my-lg-0">

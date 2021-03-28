@@ -27,6 +27,13 @@
             </tr>
         </table>
 
-        <button class="alert-warning"><a href="~/Order/OrderEdit/@Model.Id">Edit</a></button>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <button class="alert-warning"><a href="~/Order/OrderEdit/@Model.Id">Edit</a></button>
+        }
+        else
+        {
+            @Html.ActionLink("Login", "Login", "Account")
+        }
     </div>
 </div>

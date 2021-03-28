@@ -20,7 +20,7 @@ namespace Storage
                 try
                 {
                     var context = services.GetRequiredService<StorageContext>();
-                    Data.Initialize(context);
+                    Datas.Initialize(context);
                 }
                 catch (Exception exception)
                 {

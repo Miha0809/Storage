@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace Storage.Models
 {

@@ -1,0 +1,42 @@
+﻿@model Storage.Models.User
+
+@{
+    ViewBag.Title = "Edit User";
+    Layout = "Layout";
+}
+
+<h2>UserEdit</h2>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="OrderEdit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="User" class="control-label"></label>
+                @* User: @Html.EditorFor(x => x.User) *@
+                <span asp-validation-for="User" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                Address: @Html.EditorFor(x => x.Address)
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                Phone: @Html.EditorFor(x => x.Phone)
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDateTime" class="control-label"></label>
+                @* OrderDateTime: @Html.EditorFor(x => x.OrderDateTime) *@
+                <span asp-validation-for="OrderDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

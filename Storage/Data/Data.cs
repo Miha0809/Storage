@@ -6,7 +6,7 @@ using Storage.Models;
 
 namespace Storage
 {
-    public static class Data
+    public static class Datas
     {
         public static void Initialize(StorageContext storageContext)
         {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore.Proxies;
+using Microsoft.AspNetCore.Identity;
 
 namespace Storage
 {
@@ -31,6 +31,7 @@ namespace Storage
                         o.LoginPath = new PathString("/Account/Login");
                     }
                 );
+            services.AddIdentity<IdentityUser, IdentityRole>(o => o.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<Data.UserContext>();
             services.AddRazorPages();
             services.AddMvc();
         }

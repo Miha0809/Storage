@@ -1,0 +1,15 @@
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityUser>
+
+@{
+    ViewData["Title"] = "AllUsers";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>AllUsers</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Name</li>
+    }
+</ul>

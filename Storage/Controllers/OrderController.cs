@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Storage.Models;
 
@@ -26,6 +27,7 @@ namespace Storage.Controllers
             return View(orders);
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult OrderEdit(int? id)
         {
@@ -41,6 +43,7 @@ namespace Storage.Controllers
             return View(orders);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult OrderEdit(Order order)
         {
